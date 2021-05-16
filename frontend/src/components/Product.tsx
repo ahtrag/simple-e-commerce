@@ -1,11 +1,12 @@
 import React from "react";
 import { Card, Nav } from "react-bootstrap";
+import { ProductType } from "../entities/Product";
 
 interface ProductProps {
-  product: any;
+  product: ProductType;
 }
 
-const Product: React.FC<ProductProps> = (props: any) => {
+const Product: React.FC<ProductProps> = (props) => {
   const { product } = props;
 
   return (

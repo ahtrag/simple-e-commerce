@@ -1,14 +1,15 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import producs from "../products";
+import products from "../products";
 import Product from '../components/Product'
+import { ProductType } from "../entities/Product";
 
-const Home: React.FC<any> = () => {
+const Home: React.FC<{}> = () => {
   return (
     <>
       <h1>Latest Product</h1>
       <Row>
-        {producs.map((product: any) => (
+        {products.map((product: ProductType) => (
           <Col sm={12} md={6} lg={3} xl={3} key={product._id}>
             <Product product={product}/>
           </Col>
