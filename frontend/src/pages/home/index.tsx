@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import products from "../products";
-import Product from '../components/Product'
-import { ProductType } from "../entities/Product";
+import products from "../../products";
+import Product from '../../components/Product'
+import { ProductType } from "../../entities/Product";
 
-const Home: React.FC<{}> = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <h1>Latest Product</h1>
@@ -19,4 +19,4 @@ const Home: React.FC<{}> = () => {
   );
 };
 
-export default Home;
+export default HomePage;

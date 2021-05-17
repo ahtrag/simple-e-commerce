@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, Nav } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { ProductType } from "../entities/Product";
-import Rating from './Rating'
+import Rating from "./Rating";
 
 interface ProductProps {
   product: ProductType;
@@ -12,20 +13,23 @@ const Product: React.FC<ProductProps> = (props) => {
 
   return (
     <Card className="my-3 p-3 rounded">
-      <Nav.Link href={`/product/${product._id}`}>
+      <Link to={`/product/${product._id}`}>
         <Card.Img src={product.image} variant="top" />
-      </Nav.Link>
+      </Link>
 
       <Card.Body>
-        <Nav.Link href={`/product/${product._id}`}>
+        <Link to={`/product/${product._id}`} className="link">
           <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
-        </Nav.Link>
+        </Link>
 
-        <div className="mx-3">
+        <div>
           <Card.Text as="div">
-            <Rating value={product.rating} text={`${product.numReviews} reviews`}/>
+            <Rating
+              value={product.rating}
+              text={`${product.numReviews} reviews`}
+            />
           </Card.Text>
 
           <Card.Text as="h3">${product.price}</Card.Text>
